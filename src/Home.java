@@ -15,7 +15,7 @@ public class Home extends HttpServlet {
 		
 		out.println("<html>");
 		out.println("<head>");
-		out.println("<title> Atividade - 02 </title>");
+		out.println("	<title> Atividade - 02 </title>");
 		out.println("</head>");
 		out.println("<body>");
 		out.println("	<div align='center'>");
