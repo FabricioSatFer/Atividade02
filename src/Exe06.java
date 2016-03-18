@@ -25,33 +25,61 @@ public class Exe06 extends HttpServlet {
             }
             i++;
         }while(cont < 10);
-        
-				
-		out.println("<html>");
+		
+		out.println("<!DOCTYPE html>");
+		out.println("<html lang=\"pt-br\">");
 		out.println("<head>");
-		out.println("	<title>Exercício - 06</title>");
+		out.println("<title>Exercício - 06</title>");
+		out.println("  <meta charset=\"ISO-8859-1\">");
+		out.println("  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" charset=\"ISO-8859-1\">");
+		out.println("  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
+		out.println("  <link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css\" rel=\"stylesheet\">");
 		out.println("</head>");
+		
+		out.println("  <style type=\"text/css\">");
+		out.println("	div {");
+		out.println("		padding-top: 5px;");
+		out.println("		padding-bottom: 5px;");
+		out.println("	}");
+		out.println("  </style>");
+		
+		
 		out.println("<body>");
-		out.println("	<div align='center'>");
-		out.println("		<div>");
-		out.println("			<table border='1'>");
-		out.println("				<tr>");
-		out.println("					<td>Posição do vetor de números ímpares</td>");
-		out.println("					<td>Número</td>");
-		out.println("				</tr>");
+		out.println("	<div class=\"container\">");
+		out.println("   	<div class=\"row clearfix c\">");
+		out.println("       	<div class=\"col-md-12\">");
+		out.println("				<h1>EXERCÍCIO - 06</h1>");
+		out.println("			</div>");
+		out.println("       	<div class=\"col-md-12\">");
+		out.println("				<p>Faça um programa em Java que preencha um vetor de 10 posições com os 10 primeiros números ímpares.</p>");
+		out.println("			</div>");
+		out.println("		</div>");
+		out.println("	</div>");
+		
+		out.println("	<div class=\"container\" align='center'>");
+		out.println("   	<div class=\"row clearfix c\">");
+		out.println("       	<div class=\"col-md-12\">");
+		out.println("       		<table class='table'>");
+		out.println("       			<thead>");
+		out.println("       				<tr>");
+		out.println("       					<th>Posição do vetor de números ímpares</th>");
+		out.println("       					<th>Número</th>");
+		out.println("						</tr>");
+		out.println("       			</thead>");
+		out.println("       			<tbody>");
 		
 		for(i = 0; i < vetor.length; i++){
 			int pos = i + 1;
-		out.println("				<tr>");
-		out.println("					<td align='center'>" + pos + "º número do vetor</td>");
-		out.println("					<td align='center'>" + vetor[i] + "</td>");
-		out.println("				</tr>");
+		out.println("						<tr>");
+		out.println("							<td>" + pos + "º número do vetor</td>");
+		out.println("							<td>" + vetor[i] + "</td>");
+		out.println("						</tr>");
 		}
-		out.println("			</table>");
-		out.println("		</div></br>");
 		
-		out.println("		<div>");
-		out.println("			<a href='Home'><input type='button' name='VoltaHome' value='Voltar'></a>");
+		out.println("       			</tbody>");
+		out.println("       		</table>");
+		out.println("			</div>");
+		out.println("				<a href='Home'><input type='button' class=\"btn btn\" name='VoltaHome' value='Voltar'></a>");
 		out.println("		</div>");
 		out.println("	</div>");
 		out.println("</body>");

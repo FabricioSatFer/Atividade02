@@ -1,7 +1,5 @@
-import javax.servlet.http.HttpServlet;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Scanner;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,18 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/Exe03")
-public class Exe03 extends HttpServlet {
-	
-@Override
-protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
+@WebServlet("/Exe09")
+public class Exe09 extends HttpServlet{
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		PrintWriter out = response.getWriter();
 		out.println("<!DOCTYPE html>");
 		out.println("<html lang=\"pt-br\">");
 		out.println("<head>");
-		out.println("<title>Exercício - 03</title>");
+		out.println("<title>Exercício - 09</title>");
 		out.println("  <meta charset=\"ISO-8859-1\">");
 		out.println("  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" charset=\"ISO-8859-1\">");
 		out.println("  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
@@ -39,10 +35,10 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		out.println("	<div class=\"container\">");
 		out.println("   	<div class=\"row clearfix c\">");
 		out.println("       	<div class=\"col-md-12\">");
-		out.println("				<h1>EXERCÍCIO - 03</h1>");
+		out.println("				<h1>EXERCÍCIO - 09</h1>");
 		out.println("			</div>");
 		out.println("       	<div class=\"col-md-12\">");
-		out.println("				<p>Faça um programa que solicite ao usuário o ano e imprima \"Ano Bissexto\" ou \"Ano Não-Bissexto\". Um ano é bissexto se for divisível por 4, mas não por 100. Um ano também é bissexto se for divisível por 400.</p>");
+		out.println("				<p>Criar um programa em Java que receba pelo teclado uma string qualquer. O programa deverá verificar e imprimir os <BR />caracteres que representam as vogais sem acento (a, e, i, o, u) da string digitada, exemplo: <BR />Entrada : Minha mãe é linda. <BR />Saída : i a e i a</p>");
 		out.println("			</div>");
 		out.println("		</div>");
 		out.println("	</div>");
@@ -50,15 +46,13 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		out.println("	<div class=\"container\">");
 		out.println("   	<div class=\"row clearfix c\">");
 		out.println("       	<div class=\"col-md-12\">");
-		out.println("				<form method='post' action = 'Exe03' >");
-		out.println("					<div>");
-		out.println("						<label for=\"ano\">Digite um ano</label>");
-		out.println("    					<input type=\"number\" class=\"form-control\" name=\"ano\">");
-		out.println("					</div>");
-		out.println("					<div>");
+		out.println("				<form method='post' action = 'Exe09' >");
+		out.println("					<div class=\"form-group\">");
+		out.println("						<label for=\"f\">Digite uma frase</label>");
+		out.println("    					<input type=\"text\" class=\"form-control\" name=\"f\">");
+		out.println("  					</div>");		
 		out.println("  						<button type=\"submit\" class=\"btn btn-primary\">Enviar</button>");
 		out.println("						<a href='Home'><input type='button' class=\"btn btn\" name='VoltaHome' value='Voltar'></a>");
-		out.println("					</div>");
 		out.println("				</form>");
 		out.println("			</div>");
 		out.println("		</div>");
@@ -66,21 +60,20 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		out.println("</body>");
 		out.println("</html>");
 		
-				
+		
 		out.close();
+		
 	}
-
-	protected void doPost (HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String phase = request.getParameter("f");
+		String vowels = "aeiouAEIOU";
 		
-		String ano = request.getParameter("ano");
-		int numbe = Integer.parseInt(ano);
 		PrintWriter out = response.getWriter();
-		Scanner sc = new Scanner (System.in);
-		
 		out.println("<!DOCTYPE html>");
 		out.println("<html lang=\"pt-br\">");
 		out.println("<head>");
-		out.println("<title>Exercício - 03</title>");
+		out.println("<title>Exercício - 09</title>");
 		out.println("  <meta charset=\"ISO-8859-1\">");
 		out.println("  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" charset=\"ISO-8859-1\">");
 		out.println("  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
@@ -94,43 +87,41 @@ protected void doGet(HttpServletRequest request, HttpServletResponse response) t
 		out.println("	}");
 		out.println("  </style>");
 		
-		
 		out.println("<body>");
 		out.println("	<div class=\"container\">");
 		out.println("   	<div class=\"row clearfix c\">");
 		out.println("       	<div class=\"col-md-12\">");
-		out.println("				<h1>EXERCÍCIO - 03</h1>");
+		out.println("				<h1>EXERCÍCIO - 09</h1>");
 		out.println("			</div>");
 		out.println("       	<div class=\"col-md-12\">");
-		out.println("				<p>Faça um programa que solicite ao usuário o ano e imprima \"Ano Bissexto\" ou \"Ano Não-Bissexto\". Um ano é bissexto se for divisível por 4, mas não por 100. Um ano também é bissexto se for divisível por 400.</p>");
+		out.println("				<p>Criar um programa em Java que receba pelo teclado uma string qualquer. O programa deverá verificar e imprimir os <BR />caracteres que representam as vogais sem acento (a, e, i, o, u) da string digitada, exemplo: <BR />Entrada : Minha mãe é linda. <BR />Saída : i a e i a</p>");
 		out.println("			</div>");
 		out.println("		</div>");
 		out.println("	</div>");
 		
-		out.println("	<div class=\"container\" aling='center'>");
+		out.println("	<div class=\"container\">");
 		out.println("   	<div class=\"row clearfix c\">");
 		out.println("       	<div class=\"col-md-12\">");
-		out.println("       		<div class=\"jumbotron\">");
+		out.println("				<div class=\"jumbotron\">");
 		
-		if(numbe %4 == 0){
-			
-		out.println("					<p>Ano é Bissexto!</p>");
-		
-		}else{
-			
-		out.println("					<p>Ano não é Bissexto!</p>");
-		
+		for(char c: phase.toCharArray()) {
+			for(char v: vowels.toCharArray()) {
+				if(c == v)
+					out.println(c + " ");
+			}
 		}
+		
 		out.println("				</div>");
-		out.println("					<a href='Exe03'><input type='button' class=\"btn btn\" name='Voltar' value='Voltar'></a>");
+		out.println("					<a href='Exe09'><input type='button' class=\"btn btn\" name='Voltar' value='Voltar'></a>");
 		out.println("			</div>");
 		out.println("		</div>");
 		out.println("	</div>");
 		out.println("</body>");
 		out.println("</html>");
+		
 		out.close();
 		
+		
 	}
-
 
 }
